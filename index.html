@@ -83,7 +83,6 @@
             </div>
 
             <!-- tour dates -->
-
             <div id="Tour" class="tour-dates">
                 <div class="content-section">
                     <h2 class="content-heading text-white">TOUR DATES</h2>
@@ -103,7 +102,7 @@
                                 <h3 class="place-heading">New York</h3>
                                 <p class="place-time">Fri 27 Nov 2016</p>
                                 <p class="place-decription">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <a href="#" class="buy-tickets-btn s-col-full">Buy Tickets</a>
+                                <button class="buy-tickets-btn s-col-full js-buy-tickets">Buy Tickets</button>
                             </div>
                         </div>
                         <div class="col col-third place-item s-col-full s-mt-16">
@@ -112,7 +111,7 @@
                                 <h3 class="place-heading">Paris</h3>
                                 <p class="place-time">Sat 28 Nov 2016</p>
                                 <p class="place-decription">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <a href="#" class="buy-tickets-btn s-col-full">Buy Tickets</a>
+                                <button class="buy-tickets-btn s-col-full js-buy-tickets">Buy Tickets</button>
                             </div>
                         </div>
                         <div class="col col-third place-item s-col-full s-mt-16">
@@ -121,15 +120,13 @@
                                 <h3 class="place-heading">San Francisco</h3>
                                 <p class="place-time">Sun 29 Nov 2016</p>
                                 <p class="place-decription">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <a href="#" class="buy-tickets-btn s-col-full ">Buy Tickets</a>
+                                <button class="buy-tickets-btn s-col-full js-buy-tickets">Buy Tickets</button>
                             </div>
                         </div>
                         <div class="clear"></div>
                     </div>
                 </div>
             </div>
-
-            
             <div id="Contact" class="content-section">
                 <h2 class="content-heading">CONTACT</h2>
                 <p class="content-sub-heading">Fan? Drop a note!</p>
@@ -138,23 +135,23 @@
 
                 <div class="row contact-section">
                     <div class="col col-half s-col-full contact-infor">
-                        <p><i class="ti-location-pin"></i>Chicago, US</p>
-                        <p><i class="ti-mobile"></i><a href="tel: +84 387256813">Phone: +84 387256813</a></p>
-                        <p><i class="ti-email"></i><a href="mailto: thang1997iuh@gmail.com">Email: thang1997iuh@gmail.com</a></p>
+                        <p><i class="ti-location-pin"></i>Go Vap, Ho Chi Minh</p>
+                        <p><i class="ti-mobile"></i><a class="contact-section-link" href="tel: +84 387256813">Phone: +84 387256813</a></p>
+                        <p><i class="ti-email"></i><a class="contact-section-link" href="mailto: thang1997iuh@gmail.com">Email: thang1997iuh@gmail.com</a></p>
                     </div>
                     <div class="col col-half s-col-full contact-form">
                         <form action="">
                             <div class="row">
                                 <div class="col col-half s-col-full">
-                                    <input type="text" name="" placeholder="Name" required id="" class="type-control">
+                                    <input type="text" name="" placeholder="Name" required id="contact-name" class="type-control">
                                 </div>
                                 <div class="col col-half s-col-full s-mt-8">
-                                    <input type="email" name="" placeholder="Email" required id="" class="type-control">
+                                    <input type="email" name="" placeholder="Email" required id="contact-email" class="type-control">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col col-full mt-8">
-                                    <input type="text" name="" placeholder="Message" required id="" class="type-control">
+                                    <input type="text" name="" placeholder="Message" required id="contact-massage" class="type-control">
                                 </div>
                             </div>
                             <input class="mt-16 submit-btn s-col-full" type="submit" value="SEND">
@@ -166,12 +163,12 @@
             <div class="map-section">
                 <img src="./assets/img/map.jpg" alt="Map">
             </div>
-            
         </div>
-    
+
+            <!-- footer -->
         <div id="footer">
             <div class="social">
-                <a href=""><i class="cmd ti-facebook"></i></a>
+                <a href="https://www.facebook.com/nguyenducthang.win/"><i class="cmd ti-facebook"></i></a>
                 <a href=""><i class="cmd ti-instagram"></i></a>
                 <a href=""><i class="cmd ti-youtube"></i></a>
                 <a href=""><i class="cmd ti-pinterest"></i></a>
@@ -179,7 +176,45 @@
                 <a href=""><i class="cmd ti-linkedin"></i></a>
             </div>
             <div class="copyright">
-                <p>Powered by <a href="">w3.css</a></p>
+                <p>Powered by <a class="copyright-link" href="">Dev-ThangNguyen</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal -->
+    <div class="modal js-modal">
+        <div class="modal-ticket js-modal-ticket">
+            <header class="modal-ticket-heading">
+                <i class="ti-bag ticket-icon"></i>
+                <h3>Tickets</h3>
+                <div class="close-modal js-close-modal">
+                    <i class="ti-close close-modal-"></i>
+                </div>
+            </header>
+
+
+            <div class="modal-body">
+                <div class="modal-body__content">
+                    <label for="tickets-many" class="modal-body__content-text">
+                        <i class="ti-shopping-cart modal-icon--font"></i>
+                        Ticket, $15 per person
+                    </label>
+                    <input type="text" name="" placeholder="How many?" id="tickets-many" class="modal-body__input">
+
+                    <label for="ticket-email" class="modal-body__content-text  modal-margin">
+                        <i class="ti-user modal-icon--font"></i>
+                        Send to
+                    </label>
+                    <input type="text" name="" placeholder="Enter email" id="ticket-email" class="modal-body__input">
+
+                    <button type="submit" class="modal-body-pay__submit">
+                        Pay
+                        <i class="ti-check"></i>
+                    </button>
+                </div>
+                <div class="modal-footer">
+                    <p>Need <a href="" class="modal-footer_link">help?</a></p>
+                </div>
             </div>
         </div>
     </div>
@@ -218,6 +253,32 @@
         }
         
     </script>
-    
+
+    <script>
+        const buyBtns = document.querySelectorAll('.js-buy-tickets')
+        const modal = document.querySelector('.js-modal')
+        const closeModal = document.querySelector('.js-close-modal')
+        const container = document.querySelector('.js-modal-ticket')
+            // ham hien thi khung mua ve
+        function ShowBuyTickets() {
+            modal.classList.add('open')
+        }
+            // ham an khung mua ve
+        function CloseBuyTickets() {
+            modal.classList.remove('open')
+        }
+            // vong lap lang nghe tung button
+        for (const buyBtn of buyBtns) {
+            buyBtn.addEventListener('click', ShowBuyTickets)
+        }
+            // lang nghe nut close 
+        closeModal.addEventListener('click', CloseBuyTickets)
+            // lang nghe vung modal
+        modal.addEventListener('click', CloseBuyTickets)
+            // lang nghe su kien de dung lan truyen hanh vi 
+        container.addEventListener('click', function(event) {
+            event.stopPropagation()
+        })
+    </script>
 </body>
 </html>
